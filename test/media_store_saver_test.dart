@@ -6,7 +6,7 @@ import 'package:media_store/media_store.dart';
 void main() {
   const MethodChannel channel = MethodChannel('net.amond/media_store');
   final List<MethodCall> log = <MethodCall>[];
-  bool response;
+  bool? response;
 
   channel.setMockMethodCallHandler((MethodCall methodCall) async {
     log.add(methodCall);
@@ -20,7 +20,7 @@ void main() {
   test('saveImageToGallery test', () async {
     response = true;
     Uint8List imageBytes = Uint8List(16);
-    final bool result = await MediaStore.saveImage(imageBytes);
+    final bool? result = await (MediaStore.saveImage(imageBytes) as FutureOr<bool?>);
     expect(
       log,
       <Matcher>[isMethodCall('saveImageToGallery', arguments: imageBytes)],
