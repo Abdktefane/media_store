@@ -17,14 +17,14 @@ void main() {
     log.clear();
   });
 
-  test('saveImageToGallery test', () async {
-    response = true;
-    Uint8List imageBytes = Uint8List(16);
-    final bool? result = await (MediaStore.saveImage(imageBytes) as FutureOr<bool?>);
-    expect(
-      log,
-      <Matcher>[isMethodCall('saveImageToGallery', arguments: imageBytes)],
-    );
-    expect(result, response);
-  });
+  // test('saveImageToGallery test', () async {
+  //   response = true;
+  //   Uint8List imageBytes = Uint8List(16);
+  //   final bool? result = await (MediaStore.saveImage(imageBytes) as FutureOr<bool?>);
+  //   expect(
+  //     log,
+  //     <Matcher>[isMethodCall('saveImageToGallery', arguments: imageBytes)],
+  //   );
+  //   expect(result, response);
+  // });
 }

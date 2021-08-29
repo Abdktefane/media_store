@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
     String savePath = appDocDir.path + "/temp.mp4";
     await Dio().download(
         "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", savePath);
-    final result = await MediaStore.saveFile(savePath);
-    print(result);
+    // final result = await MediaStore.saveFile(savePath);
+    // print(result);
   }
 }
